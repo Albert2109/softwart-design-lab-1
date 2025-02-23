@@ -30,7 +30,7 @@
  • Клас [WarehouseManager](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/WarehouseManager.cs) залежить від абстракції ([ITransactionLogger](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/ITransactionLogger.cs)), а не від конкретної реалізації, що забезпечує гнучкість і легкість підміни компонентів.
 
 ## YAGNI (You Aren't Gonna Need It)
-• Код містить лише ті методи та властивості, які необхідні для поточних задач ( метод [DeclarePrice](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Product.cs#19-41) в [Product](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Product.cs) виконує тільки актуальне порівняння і встановлення ціни), що запобігає надмірному ускладненню системи.
+• Код містить лише ті методи та властивості, які необхідні для поточних задач ( метод [DeclarePrice](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Product.cs#L19-L41) в [Product](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Product.cs) виконує тільки актуальне порівняння і встановлення ціни), що запобігає надмірному ускладненню системи.
 
 ## Composition Over Inheritance
 • Структура програми ґрунтується на композиції:
@@ -44,6 +44,6 @@
 
 ## Fail Fast
 • Код одразу перевіряє валідність вхідних даних і генерує виключення при порушенні умов:
- – Встановники властивостей (наприклад, [money](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs#9-27), [penny](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs#29-48), [exchangeRate](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs#52-69) у класі [Money](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs)) перевіряють, чи значення не є меншими або рівними нулю, і в разі порушення виводять повідомлення про помилку,
- – Методи [RecordIn](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/TransactionLogger.cs#18-26) та [RecordOut](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/TransactionLogger.cs#28-36) у [TransactionLogger](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/TransactionLogger.cs) одразу перевіряють параметри (чи не є об’єкт product нульовим, чи кількість є додатною), забезпечуючи швидке виявлення помилок.
+ – Встановники властивостей (наприклад, [money](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs#L9-L27), [penny](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs#L29-L48), [exchangeRate](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs#L52-L69) у класі [Money](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/Money.cs)) перевіряють, чи значення не є меншими або рівними нулю, і в разі порушення виводять повідомлення про помилку,
+ – Методи [RecordIn](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/TransactionLogger.cs#L18-L26) та [RecordOut](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/TransactionLogger.cs#L28-L36) у [TransactionLogger](https://github.com/Albert2109/softwart-design-lab-1/blob/main/Lab1/Task1/Menu/TransactionLogger.cs) одразу перевіряють параметри (чи не є об’єкт product нульовим, чи кількість є додатною), забезпечуючи швидке виявлення помилок.
 
